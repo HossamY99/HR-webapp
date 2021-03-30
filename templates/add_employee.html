@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>add</title>
+</head>
+<body>
+<h2> add student </h2>
+
+{%  for employee in S  %}
+    <p>  {{  employee.Employee_id  }} {{  employee.Employee_name  }}{{  employee.photo  }}  </p>
+{%  endfor  %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form  }}
+    <button type="submit">Submit</button>
+</form>
+<h2>(photo can be left empty) </h2>
+
+</body>
+</html>
