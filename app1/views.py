@@ -74,6 +74,20 @@ def add_employee(request):
 #    return render(request, 'add_course.html', {'form': form, 'S': S})
 
 
+def list(request):
+    allemps=Employee.objects.all()
+    return render(request, 'emplist.html', {'allemps': allemps})
+
+
+def details(request, emp_id):
+    res = Employee.objects.filter(Employee_id=emp_id).first()
+    if res:
+        return render(request, 'details.html', { 'emp': res})
+    else:
+        return HttpResponse("<h1> something went wrong searching for id"+str(emp_id)+"</h1>")
+
+
+
 def search(request):
     if request.method == 'POST':
         form = SearchForm(request.POST)

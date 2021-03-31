@@ -20,5 +20,7 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^add_employee', views.add_employee),
+    url(r'^list_emp', views.list),
+    url(r'^(?P<emp_id>[0-9]+)$', views.details),
     url(r'^search_emp', views.search),
 ]
